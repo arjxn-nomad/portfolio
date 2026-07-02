@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arjun Bose P — Network &amp; Security Engineer</title>
+<meta name="description" content="Arjun Bose P — CCNA-certified Network Engineer with 2+ years of ISP infrastructure experience, transitioning into cybersecurity. AWS Certified Solutions Architect - Associate and Google Cybersecurity Certificate (95%) holder based in Kochi, Kerala.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0A0F1C;
+    --surface:#111827;
+    --surface-2:#151F33;
+    --line:#223052;
+    --text:#E8ECF6;
+    --muted:#8494B5;
+    --cyan:#3FD8E4;
+    --cyan-dim:#1F5C63;
+    --amber:#F2A65A;
+    --green:#4ADE80;
+    --radius:2px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    background-image:
+      radial-gradient(circle at 15% 10%, rgba(63,216,228,0.06), transparent 45%),
+      radial-gradient(circle at 85% 60%, rgba(242,166,90,0.04), transparent 40%);
+  }
+  .mono{ font-family:'IBM Plex Mono', monospace; }
+  .display{ font-family:'Space Grotesk', sans-serif; }
+
+  a{ color:inherit; }
+  .wrap{ max-width:1040px; margin:0 auto; padding:0 28px; }
+
+  /* eyebrow / labels */
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--cyan);
+    display:flex; align-items:center; gap:10px;
+    margin-bottom:14px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:7px; height:7px;
+    background:var(--cyan);
+    box-shadow:0 0 8px var(--cyan);
+    border-radius:50%;
+    display:inline-block;
+  }
+
+  .eyebrow-amber{ color:var(--amber); }
+  .eyebrow-amber::before{ background:var(--amber); box-shadow:0 0 8px var(--amber); }
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(10,15,28,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 28px; max-width:1040px; margin:0 auto;
+  }
+  .brand{ font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:16px; letter-spacing:0.02em;}
+  .brand span{ color:var(--cyan); }
+  .navlinks{ display:flex; gap:28px; font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--muted); }
+  .navlinks a{ text-decoration:none; transition:color .2s; }
+  .navlinks a:hover{ color:var(--cyan); }
+  .resume-link{
+    font-family:'IBM Plex Mono', monospace; font-size:12.5px;
+    color:var(--cyan); text-decoration:none;
+    border:1px solid var(--cyan-dim);
+    padding:7px 14px; border-radius:var(--radius);
+    transition:all .2s;
+    white-space:nowrap;
+  }
+  .resume-link:hover{ background:rgba(63,216,228,0.08); border-color:var(--cyan); }
+  @media (max-width:640px){ .navlinks{ display:none; } }
+
+  /* HERO */
+  .hero{ padding:88px 0 60px; position:relative; overflow:hidden; }
+  .hero-grid{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px; align-items:center; }
+  @media (max-width:860px){ .hero-grid{ grid-template-columns:1fr; } }
+
+  h1.name{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    font-size:clamp(38px, 5.5vw, 58px);
+    line-height:1.04;
+    letter-spacing:-0.01em;
+  }
+  .role-line{
+    margin-top:16px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:16px;
+    color:var(--muted);
+  }
+  .role-line b{ color:var(--text); font-weight:500; }
+  .role-line .arrow{ color:var(--amber); padding:0 6px; }
+
+  .hero-desc{ margin-top:22px; max-width:520px; color:var(--muted); font-size:15.5px; }
+
+  .cta-row{ margin-top:34px; display:flex; gap:14px; flex-wrap:wrap; }
+  .btn{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    padding:12px 20px;
+    border-radius:var(--radius);
+    text-decoration:none;
+    display:inline-flex; align-items:center; gap:8px;
+    transition:all .2s;
+    border:1px solid var(--line);
+  }
+  .btn-primary{ background:var(--cyan); color:#04181A; border-color:var(--cyan); font-weight:600; }
+  .btn-primary:hover{ box-shadow:0 0 22px rgba(63,216,228,0.35); transform:translateY(-1px); }
+  .btn-ghost{ color:var(--text); }
+  .btn-ghost:hover{ border-color:var(--cyan); color:var(--cyan); }
+
+  /* SVG path graphic */
+  .path-card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:20px 18px 14px;
+  }
+  .path-card-head{
+    display:flex; justify-content:space-between; align-items:center;
+    font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--muted);
+    letter-spacing:0.08em; text-transform:uppercase;
+    margin-bottom:10px;
+  }
+  .dot-row{ display:flex; gap:6px; }
+  .dot-row span{ width:8px; height:8px; border-radius:50%; background:var(--line); }
+
+  .hop-label{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; fill:var(--muted); }
+  .hop-title{ font-family:'Space Grotesk', sans-serif; font-size:13.5px; fill:var(--text); font-weight:600; }
+  .hop-sub{ font-family:'IBM Plex Mono', monospace; font-size:10.5px; fill:var(--muted); }
+
+  /* STATUS STRIP */
+  .status-strip{
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    background:var(--surface);
+  }
+  .status-grid{
+    display:grid; grid-template-columns:repeat(4,1fr);
+    max-width:1040px; margin:0 auto;
+  }
+  .status-cell{
+    padding:26px 28px;
+    border-right:1px solid var(--line);
+  }
+  .status-cell:last-child{ border-right:none; }
+  @media (max-width:760px){
+    .status-grid{ grid-template-columns:repeat(2,1fr); }
+    .status-cell:nth-child(2){ border-right:none; }
+  }
+  .status-num{ font-family:'Space Grotesk',sans-serif; font-size:28px; font-weight:700; color:var(--cyan); }
+  .status-cap{ font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.06em; margin-top:4px; }
+
+  /* SECTION GENERIC */
+  section{ padding:76px 0; }
+  .section-head{ margin-bottom:36px; }
+  h2.stitle{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:600; font-size:26px;
+  }
+
+  /* ABOUT */
+  .about-text{ max-width:700px; color:var(--muted); font-size:15.5px; }
+  .about-text strong{ color:var(--text); font-weight:500; }
+
+  /* SKILLS */
+  .skills-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
+  @media (max-width:700px){ .skills-grid{ grid-template-columns:1fr; } }
+  .skill-cell{ background:var(--surface); padding:24px 26px; }
+  .skill-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:12px; }
+  .skill-name{ font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:15px; }
+  .skill-tag{ font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--cyan); }
+  .skill-items{ color:var(--muted); font-size:13.5px; line-height:1.7; }
+  .skill-cell-pivot{ border-left:2px solid var(--amber); }
+  .skill-tag-pivot{ color:var(--amber); }
+  .skill-cert-link{ margin-top:12px; font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--amber); }
+
+  /* EXPERIENCE TIMELINE */
+  .timeline{ position:relative; padding-left:34px; }
+  .timeline::before{
+    content:"";
+    position:absolute; left:6px; top:6px; bottom:6px; width:1px;
+    background:linear-gradient(to bottom, var(--cyan), var(--line) 85%);
+  }
+  .tl-item{ position:relative; padding-bottom:44px; }
+  .tl-item:last-child{ padding-bottom:0; }
+  .tl-dot{
+    position:absolute; left:-34px; top:4px;
+    width:13px; height:13px; border-radius:50%;
+    background:var(--bg); border:2px solid var(--cyan);
+  }
+  .tl-item.current .tl-dot{ background:var(--cyan); box-shadow:0 0 10px var(--cyan); }
+  .tl-head{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px 20px; align-items:baseline; }
+  .tl-role{ font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:17px; }
+  .tl-org{ color:var(--cyan); font-weight:500; }
+  .tl-date{ font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--muted); white-space:nowrap; }
+  .tl-loc{ font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--muted); margin-top:2px; }
+  .tl-list{ margin-top:12px; color:var(--muted); font-size:14px; }
+  .tl-list li{ list-style:none; padding-left:16px; position:relative; margin-bottom:6px; }
+  .tl-list li::before{ content:"›"; position:absolute; left:0; color:var(--amber); }
+
+  /* CERTIFICATIONS */
+  .cert-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  @media (max-width:760px){ .cert-grid{ grid-template-columns:1fr; } }
+  .cert-card{
+    background:var(--surface); border:1px solid var(--line); border-radius:6px;
+    padding:22px 20px; position:relative; overflow:hidden;
+  }
+  .cert-card::after{
+    content:"VERIFIED"; position:absolute; top:14px; right:-30px;
+    background:var(--cyan-dim); color:var(--cyan);
+    font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.1em;
+    padding:3px 34px; transform:rotate(35deg);
+  }
+  .cert-org{ font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.06em;}
+  .cert-name{ font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:16px; margin-top:8px; line-height:1.3; }
+  .cert-meta{ margin-top:14px; font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--cyan); }
+  .cert-card-pivot{ border-color:var(--amber); }
+  .cert-unlocks{ margin-top:10px; font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--amber); }
+
+  /* EDUCATION small line */
+  .edu-line{ margin-top:26px; font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--muted); border-top:1px solid var(--line); padding-top:22px; }
+  .edu-line b{ color:var(--text); font-weight:500; }
+
+  /* CONTACT / FOOTER */
+  footer{ border-top:1px solid var(--line); padding:70px 0 40px; background:var(--surface); }
+  .term{
+    background:var(--bg); border:1px solid var(--line); border-radius:6px;
+    padding:26px 28px; font-family:'IBM Plex Mono', monospace; font-size:14px;
+    max-width:640px;
+  }
+  .term .line{ margin-bottom:10px; }
+  .term .prompt{ color:var(--green); }
+  .term .cmd{ color:var(--text); }
+  .term a{ color:var(--cyan); text-decoration:none; }
+  .term a:hover{ text-decoration:underline; }
+  .foot-meta{ margin-top:34px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--muted); }
+
+  /* reveal animation */
+  .reveal{ opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    .reveal{ opacity:1; transform:none; transition:none; }
+  }
+
+  a:focus-visible, button:focus-visible{ outline:2px solid var(--cyan); outline-offset:2px; }
+</style>
+</head>
+<body>
+
+<header>
+  <nav aria-label="Primary navigation">
+    <div class="brand">ARJUN<span>.</span>BOSE</div>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="resume-link" href="Arjun_Bose_Resume.pdf" download="Arjun_Bose_Resume.pdf" aria-label="Download Arjun Bose P's resume as PDF">Resume ↓</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Available for security-focused roles</div>
+      <h1 class="name">Arjun Bose P</h1>
+      <div class="role-line">Network Engineer <span class="arrow">→</span> <b>Security Engineer</b></div>
+      <p class="hero-desc">Two years keeping ISP networks up — routing traffic, sealing loops, resolving link failures under pressure. Now directing that experience toward cybersecurity, backed by a CCNA, a 95%-scored Google Cybersecurity Certificate, and an AWS Solutions Architect - Associate certification.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="mailto:arjunbose103@gmail.com" aria-label="Send an email to Arjun Bose P">Email me →</a>
+        <a class="btn btn-ghost" href="https://linkedin.com/in/arjun-bose-6b7330307" target="_blank" rel="noopener" aria-label="Open Arjun Bose P's LinkedIn profile in a new tab">LinkedIn</a>
+        <a class="btn btn-ghost" href="https://github.com/arjxn-nomad/portfolio" target="_blank" rel="noopener" aria-label="Open Arjun Bose P's GitHub repository in a new tab">GitHub</a>
+        <a class="btn btn-ghost" href="Arjun_Bose_Resume.pdf" download="Arjun_Bose_Resume.pdf" aria-label="Download Arjun Bose P's resume as PDF">Download résumé ↓</a>
+      </div>
+    </div>
+
+    <div class="path-card reveal">
+      <div class="path-card-head">
+        <span>career_path.trace</span>
+        <div class="dot-row"><span></span><span></span><span></span></div>
+      </div>
+      <svg viewBox="0 0 320 220" width="100%" height="220" id="pathSvg">
+        <line x1="40" y1="30" x2="40" y2="190" stroke="#22304A" stroke-width="1.5"/>
+        <path id="pulseLine" d="M40 30 L40 190" stroke="#3FD8E4" stroke-width="2" fill="none" stroke-dasharray="6 180" stroke-dashoffset="0"/>
+
+        <circle cx="40" cy="30" r="6" fill="#0A0F1C" stroke="#7C8AA8" stroke-width="2"/>
+        <text x="58" y="26" class="hop-sub">HOP 01 · 07/24–12/24</text>
+        <text x="58" y="42" class="hop-title">Junior Network Engineer</text>
+        <text x="58" y="57" class="hop-sub">Soften Technologies</text>
+
+        <circle cx="40" cy="110" r="6" fill="#0A0F1C" stroke="#7C8AA8" stroke-width="2"/>
+        <text x="58" y="106" class="hop-sub">HOP 02 · 01/25–12/25</text>
+        <text x="58" y="122" class="hop-title">Assistant Network Engineer</text>
+        <text x="58" y="137" class="hop-sub">SmartNet Kochi</text>
+
+        <circle cx="40" cy="190" r="7" fill="#3FD8E4" stroke="#3FD8E4" stroke-width="2"/>
+        <text x="58" y="186" class="hop-sub" fill="#3FD8E4">HOP 03 · 12/25–present</text>
+        <text x="58" y="202" class="hop-title">Network Support Engineer</text>
+        <text x="58" y="217" class="hop-sub">Kerala Vision</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="status-strip">
+  <div class="status-grid">
+    <div class="status-cell"><div class="status-num">40+</div><div class="status-cap">Devices Managed</div></div>
+    <div class="status-cell"><div class="status-num">99%+</div><div class="status-cap">Network Uptime</div></div>
+    <div class="status-cell"><div class="status-num">2+ yrs</div><div class="status-cap">ISP Infrastructure</div></div>
+    <div class="status-cell"><div class="status-num">95%</div><div class="status-cap">Google Cybersecurity Score</div></div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap reveal">
+    <div class="section-head">
+      <div class="eyebrow">About</div>
+      <h2 class="stitle">Built for uptime, moving toward defense</h2>
+    </div>
+    <p class="about-text">
+      I'm a CCNA-certified network engineer who has spent the last two years keeping ISP and LCO networks running —
+      <strong>configuring OLTs, segmenting VLANs, tunneling with Q-in-Q, and locking down loops with STP/RSTP and BPDU Guard.</strong>
+      Along the way I picked up a habit of watching networks closely: PRTG dashboards, packet captures, BPDU logs — the same instinct
+      that now pulls me toward security. I hold a <strong>Google Cybersecurity Certificate (95%)</strong> and an
+      <strong>AWS Certified Solutions Architect - Associate</strong>, and I'm looking for a role where keeping a network alive
+      and keeping it safe are the same job.
+    </p>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap reveal">
+    <div class="section-head">
+      <div class="eyebrow">Skills</div>
+      <h2 class="stitle">What's running under the hood</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-cell">
+        <div class="skill-head"><span class="skill-name">Network Infrastructure</span><span class="skill-tag">L2/L3</span></div>
+        <div class="skill-items">Routing &amp; Switching · VLAN Segmentation · Q-in-Q (802.1ad) · STP / RSTP / BPDU Guard · ISP Deployment</div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-head"><span class="skill-name">Core Protocols</span><span class="skill-tag">STACK</span></div>
+        <div class="skill-items">TCP/IP · DHCP · DNS · NAT · IPv4/IPv6</div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-head"><span class="skill-name">Hardware &amp; Devices</span><span class="skill-tag">FIELD</span></div>
+        <div class="skill-items">OLTs — Netlink, Syrotech, DBC, Sharp, Dasan · Switches — Huawei, Cisco, DBC · Modems &amp; Access Points</div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-head"><span class="skill-name">Systems &amp; Monitoring</span><span class="skill-tag">OPS</span></div>
+        <div class="skill-items">PRTG Network Monitor · Red Hat Linux · Wireshark · Packet Tracer · Bash · PowerShell</div>
+      </div>
+      <div class="skill-cell skill-cell-pivot" style="grid-column:1 / -1;">
+        <div class="skill-head"><span class="skill-name">Security &amp; Cloud</span><span class="skill-tag skill-tag-pivot">IN PROGRESS</span></div>
+        <div class="skill-items">Risk Assessment · Cybersecurity Principles · AWS Solutions Architecture · AWS Fundamentals</div>
+        <div class="skill-cert-link">Backed by 2 certifications ↓</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap reveal">
+    <div class="section-head">
+      <div class="eyebrow">Experience</div>
+      <h2 class="stitle">Three stops, one direction</h2>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item current">
+        <div class="tl-dot"></div>
+        <div class="tl-head">
+          <div><span class="tl-role">Network Support Engineer</span> <span class="tl-org">· Kerala Vision</span></div>
+          <div class="tl-date">12/2025 – Present</div>
+        </div>
+        <div class="tl-loc">Kalamassery, Kochi</div>
+        <ul class="tl-list">
+          <li>Configured and managed 30+ OLT devices (Netlink, Syrotech, DBC, Sharp, Dasan), holding 99% uptime across LCO networks.</li>
+          <li>Deployed access and ring switches with STP, RSTP, and BPDU Guard — cut loop issues by 30%.</li>
+          <li>Rolled out VLAN segmentation and Q-in-Q tunneling for customer networks, lifting service efficiency by 20%.</li>
+          <li>Traced VLAN conflicts and link failures through deep BPDU analysis, cutting link downtime by 25%.</li>
+          <li>Watched network health in PRTG, shrinking issue detection and resolution time by 30%.</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-head">
+          <div><span class="tl-role">Assistant Network Engineer</span> <span class="tl-org">· SmartNet Kochi</span></div>
+          <div class="tl-date">01/2025 – 12/2025</div>
+        </div>
+        <div class="tl-loc">Ernakulam</div>
+        <ul class="tl-list">
+          <li>Configured and managed 10+ OLTs, switches, and access points, sustaining 99.9% uptime.</li>
+          <li>Diagnosed performance issues with TCP/IP analysis and Linux tooling, cutting downtime by 30%.</li>
+          <li>Isolated traffic through VLAN implementations to harden network security and reliability.</li>
+          <li>Ran end-to-end client setups — modem/router configuration and Ethernet cabling.</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-head">
+          <div><span class="tl-role">Junior Network Engineer</span> <span class="tl-org">· Soften Technologies</span></div>
+          <div class="tl-date">07/2024 – 12/2024</div>
+        </div>
+        <div class="tl-loc">Kadavanthara</div>
+        <ul class="tl-list">
+          <li>Ran CLI and GUI environments for enterprise-grade routers and switches, watching system health.</li>
+          <li>Staged network deployments with senior engineers — IP addressing and port verification.</li>
+          <li>Put TCP/IP fundamentals into practice, executing VLAN builds via CLI.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="wrap reveal">
+    <div class="section-head">
+      <div class="eyebrow eyebrow-amber">Certifications</div>
+      <h2 class="stitle">↑ What's powering the Security &amp; Cloud row above</h2>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <div class="cert-org">Cisco</div>
+        <div class="cert-name">Certified Network Associate (CCNA)</div>
+        <div class="cert-meta">09/2024 – 09/2027</div>
+        <div class="cert-unlocks" style="color:var(--muted);">↳ foundation: routing &amp; switching</div>
+      </div>
+      <div class="cert-card cert-card-pivot">
+        <div class="cert-org">Amazon Web Services</div>
+        <div class="cert-name">Solutions Architect - Associate</div>
+        <div class="cert-meta">07/2026 – 07/2029</div>
+        <div class="cert-unlocks">↳ unlocks cloud security &amp; IAM design</div>
+      </div>
+      <div class="cert-card cert-card-pivot">
+        <div class="cert-org">Google</div>
+        <div class="cert-name">Cybersecurity Certificate</div>
+        <div class="cert-meta">Score: 95% · 12/2024</div>
+        <div class="cert-unlocks">↳ unlocks risk assessment &amp; threat response</div>
+      </div>
+    </div>
+    <div class="edu-line">
+      <b>B.Sc. Electronics</b> — IHRD College of Applied Science, Chelakkara · 06/2021 – 04/2024<br>
+      <b>Advanced Networking &amp; Systems Diplomas</b> (AWS, Red Hat Linux, Cybersecurity) — Soften Technologies · 2023 – 2024
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap reveal">
+    <div class="eyebrow">Contact</div>
+    <h2 class="stitle" style="margin-bottom:24px;">Open a connection</h2>
+    <div class="term">
+      <div class="line"><span class="prompt">❯</span> <span class="cmd">whoami</span></div>
+      <div class="line" style="color:#8494B5; margin-left:18px;">Arjun Bose P — Palakkad, Kerala (currently in Kochi)</div>
+      <div class="line"><span class="prompt">❯</span> <span class="cmd">contact --email</span></div>
+      <div class="line" style="margin-left:18px;"><a href="mailto:arjunbose103@gmail.com" aria-label="Email arjunbose103@gmail.com">arjunbose103@gmail.com</a></div>
+      <div class="line"><span class="prompt">❯</span> <span class="cmd">contact --phone</span></div>
+      <div class="line" style="margin-left:18px; color:#8494B5;">+91 91883 96522</div>
+      <div class="line"><span class="prompt">❯</span> <span class="cmd">contact --linkedin</span></div>
+      <div class="line" style="margin-left:18px;"><a href="https://linkedin.com/in/arjun-bose-6b7330307" target="_blank" rel="noopener" aria-label="Open Arjun Bose P's LinkedIn profile in a new tab">linkedin.com/in/arjun-bose-6b7330307</a></div>
+      <div class="line"><span class="prompt">❯</span> <span class="cmd">contact --github</span></div>
+      <div class="line" style="margin-left:18px;"><a href="https://github.com/arjxn-nomad/portfolio" target="_blank" rel="noopener" aria-label="Open Arjun Bose P's GitHub repository in a new tab">github.com/arjxn-nomad/portfolio</a></div>
+    </div>
+    <div class="foot-meta">
+      <span>© 2026 Arjun Bose P</span>
+      <span>Status: open to security-focused roles</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el=>io.observe(el));
+
+  // hero path card should reveal immediately (above the fold)
+  document.addEventListener('DOMContentLoaded', ()=>{
+    document.querySelector('.path-card').classList.add('in');
+  });
+
+  // pulse traveling down the trace line, once on load, respecting reduced motion
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!prefersReduced){
+    const pulse = document.getElementById('pulseLine');
+    if(pulse){
+      pulse.style.transition = 'stroke-dashoffset 2.4s ease-in-out';
+      pulse.style.strokeDashoffset = '0';
+      requestAnimationFrame(()=>{
+        pulse.style.strokeDashoffset = '-180';
+      });
+    }
+  }
+</script>
+
+</body>
+</html>
